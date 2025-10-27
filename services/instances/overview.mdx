@@ -1,0 +1,75 @@
+---
+title: 'Compute Instances Overview'
+description: 'Virtual machines for your cloud infrastructure'
+---
+
+## What are Compute Instances?
+
+Compute instances are virtual machines running on our cloud infrastructure. They provide you with full control over your computing resources, operating system, and applications.
+
+## Features
+
+- **Multiple Operating Systems**: Ubuntu, Debian, CentOS, and more
+- **Flexible Sizing**: Choose from 1GB RAM to 256GB RAM instances
+- **SSD Storage**: Fast, reliable SSD storage up to 10TB
+- **Snapshots**: Create point-in-time backups of your instances
+- **Reserved IPs**: Assign static IP addresses
+- **Load Balancing**: Distribute traffic across instances
+
+## Instance Types
+
+<CardGroup cols={2}>
+  <Card title="General Purpose">
+    Balanced CPU and RAM for most applications
+    - 1GB to 32GB RAM
+    - 1 to 16 vCPUs
+    - Starting at $5/month
+  </Card>
+  <Card title="CPU Optimized">
+    High-performance instances for CPU-intensive workloads
+    - 4GB to 64GB RAM
+    - 4 to 32 vCPUs
+    - Starting at $40/month
+  </Card>
+  <Card title="Memory Optimized">
+    Large memory instances for databases and analytics
+    - 16GB to 256GB RAM
+    - 4 to 32 vCPUs
+    - Starting at $80/month
+  </Card>
+  <Card title="Storage Optimized">
+    High IOPS for I/O-intensive applications
+    - 8GB to 128GB RAM
+    - 4 to 24 vCPUs
+    - NVMe SSD
+    - Starting at $60/month
+  </Card>
+</CardGroup>
+
+## Networking
+
+All instances include:
+- 1 public IPv4 address (or reserved IP)
+- Private networking between instances in the same region
+- Configurable firewall rules
+- Load balancer support
+
+## Availability
+
+- **SLA**: 99.9% uptime guarantee
+- **Multi-region**: Deploy in multiple geographic regions
+- **Auto-scaling**: Automatically scale based on demand
+
+## Getting Started
+
+<Steps>
+  <Step title="Create Instance">
+    Follow our guide to <a href="/services/instances/create">create your first instance</a>
+  </Step>
+  <Step title="Configure Security">
+    Set up <a href="/networking/firewall/create-rules">firewall rules</a> and SSH keys
+  </Step>
+  <Step title="Deploy Application">
+    Install your software and deploy your application
+  </Step>
+</Steps>

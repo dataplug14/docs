@@ -1,68 +1,155 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Nubis Documentation",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#4A90E2",
+    "light": "#6BB3F5",
+    "dark": "#2E6DA4"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Getting Started",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Introduction",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "quickstart"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Authentication",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "authentication/getting-started",
+              "authentication/api-keys"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "Services",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "Compute Instances",
             "pages": [
-              "api-reference/introduction"
+              "services/instances/overview",
+              "services/instances/create",
+              "services/instances/manage",
+              "services/instances/backup"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "GitHub Runners",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "services/runners/overview",
+              "services/runners/setup",
+              "services/runners/configure",
+              "services/runners/troubleshooting"
+            ]
+          },
+          {
+            "group": "Migration Support",
+            "pages": [
+              "services/migration/overview",
+              "services/migration/prepare",
+              "services/migration/execute",
+              "services/migration/verify"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Networking",
+        "groups": [
+          {
+            "group": "Load Balancers",
+            "pages": [
+              "networking/load-balancers/overview",
+              "networking/load-balancers/create",
+              "networking/load-balancers/configure",
+              "networking/load-balancers/ssl-termination"
+            ]
+          },
+          {
+            "group": "IP Addresses",
+            "pages": [
+              "networking/ips/reserved-ips",
+              "networking/ips/floating-ips",
+              "networking/ips/assignment"
+            ]
+          },
+          {
+            "group": "Firewall",
+            "pages": [
+              "networking/firewall/overview",
+              "networking/firewall/create-rules",
+              "networking/firewall/advanced-config"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Billing",
+        "groups": [
+          {
+            "group": "Payment Methods",
+            "pages": [
+              "billing/overview",
+              "billing/paystack",
+              "billing/stripe",
+              "billing/invoices"
+            ]
+          },
+          {
+            "group": "Usage & Limits",
+            "pages": [
+              "billing/usage-tracking",
+              "billing/quotas",
+              "billing/billing-alerts"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Administration",
+        "groups": [
+          {
+            "group": "RBAC Management",
+            "pages": [
+              "administration/rbac/overview",
+              "administration/rbac/roles",
+              "administration/rbac/permissions",
+              "administration/rbac/users"
+            ]
+          },
+          {
+            "group": "Security",
+            "pages": [
+              "administration/security/access-control",
+              "administration/security/audit-logs",
+              "administration/security/sso"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "Authentication",
+            "pages": [
+              "api-reference/authentication"
+            ]
+          },
+          {
+            "group": "Endpoints",
+            "pages": [
+              "api-reference/instances",
+              "api-reference/networking",
+              "api-reference/billing"
             ]
           }
         ]
@@ -71,14 +158,14 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Support",
+          "href": "/support",
+          "icon": "headset"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Status",
+          "href": "https://status.usenubis.com",
+          "icon": "circle-activity"
         }
       ]
     }
@@ -91,13 +178,13 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@usenubis.com"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "href": "https://console.usenubis.com"
     }
   },
   "contextual": {
@@ -114,9 +201,7 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/usenubis"
     }
   }
 }

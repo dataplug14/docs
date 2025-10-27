@@ -1,0 +1,78 @@
+---
+title: 'Paystack Payments'
+description: 'Set up Paystack for seamless payments'
+---
+
+## Overview
+
+Paystack integration provides support for payments across Africa, including:
+- Local cards from Nigerian, South African, and Ghanaian banks
+- Bank transfers and USSD payments
+- Mobile money from multiple providers
+
+## Adding Paystack
+
+1. **Navigate to Billing**
+   Go to your dashboard → Billing → Payment Methods
+
+2. **Select Paystack**
+   Click "Add Payment Method" and choose Paystack
+
+3. **Enter Card Details**
+   - Card number
+   - Expiry date
+   - CVV
+   - Cardholder name
+
+4. **Verify**
+   Complete the 3D Secure authentication
+
+<Info>
+Paystack supports automatic 3D Secure verification for enhanced security.
+</Info>
+
+## Supported Methods
+
+- **Credit/Debit Cards**: Visa, Mastercard, Verve
+- **Bank Transfers**: Direct bank debit
+- **Mobile Money**: MTN, Orange, Airtel
+- **USSD**: Bank USSD codes
+
+## Security
+
+Paystack payments are:
+- PCI DSS Level 1 certified
+- Encrypted end-to-end
+- Protected by 3D Secure
+
+## Paystack vs Stripe
+
+<Accordion title="When to use Paystack">
+- Primarily operating in African markets
+- Need local payment methods (mobile money, USSD)
+- Want to avoid cross-border fees
+- Prefer NGN, ZAR, or GHS billing
+</Accordion>
+
+<Accordion title="When to use Stripe">
+- Operating globally or outside Africa
+- Need 130+ currency support
+- Require enterprise features
+- Need subscription management
+</Accordion>
+
+## Troubleshooting
+
+### Payment Declined
+
+1. Verify card details are correct
+2. Check sufficient balance
+3. Confirm 3D Secure was completed
+4. Contact your bank if issues persist
+
+### Pending Verification
+
+Some payments may take 1-2 business days:
+- First-time card verification
+- High-value transactions
+- Cross-border payments

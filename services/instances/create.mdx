@@ -1,0 +1,154 @@
+---
+title: 'Create an Instance'
+description: 'Step-by-step guide to creating compute instances'
+---
+
+## Create via Dashboard
+
+1. Navigate to **Instances** in your dashboard
+2. Click the **"Create Instance"** button
+3. Configure your instance settings
+4. Review and launch
+
+## Configuration Options
+
+### Operating System
+
+Choose from:
+- **Ubuntu** (20.04 LTS, 22.04 LTS)
+- **Debian** (10, 11)
+- **CentOS** (7, 8)
+- **Custom Images**: Upload your own ISO
+
+### Instance Size
+
+Select based on your workload:
+
+```24:45:services/instances/overview.mdx
+<CardGroup cols={2}>
+  <Card title="General Purpose">
+    Balanced CPU and RAM for most applications
+    - 1GB to 32GB RAM
+    - 1 to 16 vCPUs
+    - Starting at $5/month
+  </Card>
+  <Card title="CPU Optimized">
+    High-performance instances for CPU-intensive workloads
+    - 4GB to 64GB RAM
+    - 4 to 32 vCPUs
+    - Starting at $40/month
+  </Card>
+```
+
+### Region Selection
+
+Choose the closest region to your users:
+- **US East** (New York)
+- **US West** (San Francisco)
+- **EU** (London)
+- **Asia** (Singapore)
+
+### Networking
+
+- **Public IP**: Automatically assigned IPv4 address
+- **Reserved IP**: Static IP that persists across reboots
+- **Private Network**: Enable private networking between instances
+
+## Create via API
+
+Create an instance programmatically:
+
+<CodeGroup>
+
+```bash curl
+curl -X POST https://api.usenubis.com/v1/instances \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "my-instance",
+    "image": "ubuntu-22-04",
+    "size": "s-1vcpu-2gb",
+    "region": "nyc1",
+    "ssh_keys": ["key-id"]
+  }'
+```
+
+```python Python
+import requests
+
+headers = {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
+}
+
+data = {
+    "name": "my-instance",
+    "image": "ubuntu-22-04",
+    "size": "s-1vcpu-2gb",
+    "region": "nyc1",
+    "ssh_keys": ["key-id"]
+}
+
+response = requests.post(
+    "https://api.usenubis.com/v1/instances",
+    headers=headers,
+    json=data
+)
+
+print(response.json())
+```
+
+```javascript JavaScript
+const response = await fetch('https://api.usenubis.com/v1/instances', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    name: 'my-instance',
+    image: 'ubuntu-22-04',
+    size: 's-1vcpu-2gb',
+    region: 'nyc1',
+    ssh_keys: ['key-id']
+  })
+});
+
+const instance = await response.json();
+console.log(instance);
+```
+
+</CodeGroup>
+
+## Post-Creation Steps
+
+<Steps>
+  <Step title="Access Your Instance">
+    Connect via SSH using your public IP and key
+  </Step>
+  <Step title="Configure Firewall">
+    Set up <a href="/networking/firewall/create-rules">firewall rules</a> to secure your instance
+  </Step>
+  <Step title="Install Software">
+    Update packages and install your required software
+  </Step>
+</Steps>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card
+    title="Manage Instance"
+    icon="gear"
+    href="/services/instances/manage"
+  >
+    Learn about instance management operations
+  </Card>
+  <Card
+    title="Backup Strategy"
+    icon="floppy-disk"
+    href="/services/instances/backup"
+  >
+    Set up automated snapshots and backups
+  </Card>
+</CardGroup>

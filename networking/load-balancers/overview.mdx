@@ -1,0 +1,101 @@
+---
+title: 'Load Balancers Overview'
+description: 'Distribute traffic across multiple instances'
+---
+
+## What are Load Balancers?
+
+Load balancers distribute incoming traffic across multiple instances to ensure high availability and optimal performance. They automatically route requests to healthy instances.
+
+## Features
+
+- **Automatic Failover**: Route traffic away from unhealthy instances
+- **SSL Termination**: Handle HTTPS at the load balancer
+- **Health Checks**: Continuously monitor instance health
+- **Sticky Sessions**: Route users to the same instance
+- **Multiple Algorithms**: Round robin, least connections, IP hash
+
+## How It Works
+
+<Accordion title="Traffic Flow">
+1. User sends request to load balancer IP
+2. Load balancer checks health of backend instances
+3. Request is routed to a healthy instance
+4. Response is returned to user
+5. Unhealthy instances are marked and bypassed
+</Accordion>
+
+## Use Cases
+
+<CardGroup cols={2}>
+  <Card title="High Availability">
+    Distribute traffic across multiple instances to avoid downtime
+  </Card>
+  <Card title="Auto-Scaling">
+    Automatically add instances when traffic increases
+  </Card>
+  <Card title="SSL Offloading">
+    Handle SSL termination at the load balancer
+  </Card>
+  <Card title="Geographic Routing">
+    Route users to nearest datacenter
+  </Card>
+</CardGroup>
+
+## Configuration Options
+
+### Health Checks
+
+Configure checks to monitor instance health:
+- **HTTP**: Check specific endpoint (e.g., `/health`)
+- **TCP**: Basic connectivity check
+- **Interval**: How often to check (5s - 60s)
+- **Timeout**: Response timeout (2s - 5s)
+
+### Load Balancing Algorithm
+
+Choose how traffic is distributed:
+- **Round Robin**: Evenly distribute across instances
+- **Least Connections**: Route to instance with fewest connections
+- **IP Hash**: Route based on source IP for session stickiness
+
+## Creating a Load Balancer
+
+<Steps>
+  <Step title="Create Load Balancer">
+    Navigate to Networking → Load Balancers → Create
+  </Step>
+  <Step title="Add Backend Instances">
+    Select instances to distribute traffic across
+  </Step>
+  <Step title="Configure Health Checks">
+    Set up monitoring for your applications
+  </Step>
+  <Step title="Assign Reserved IP">
+    Optional: Use a static IP address
+  </Step>
+</Steps>
+
+## Pricing
+
+- **Standard**: $10/month + $0.02/GB processed
+- **Enterprise**: $50/month + $0.015/GB processed (includes DDoS protection)
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card
+    title="Create Load Balancer"
+    icon="plus"
+    href="/networking/load-balancers/create"
+  >
+    Set up your first load balancer
+  </Card>
+  <Card
+    title="SSL Configuration"
+    icon="lock"
+    href="/networking/load-balancers/ssl-termination"
+  >
+    Configure SSL certificates
+  </Card>
+</CardGroup>

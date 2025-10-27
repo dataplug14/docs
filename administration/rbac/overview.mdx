@@ -1,0 +1,91 @@
+---
+title: 'RBAC Overview'
+description: 'Role-based access control for teams'
+---
+
+## What is RBAC?
+
+Role-Based Access Control (RBAC) allows you to manage permissions for team members through roles. Instead of assigning individual permissions, you assign roles that contain predefined permission sets.
+
+## Key Concepts
+
+### Roles
+Predefined sets of permissions that determine what a user can do:
+- **Owner**: Full account access
+- **Admin**: Manage resources and team members
+- **Developer**: Create and manage resources
+- **Viewer**: Read-only access
+
+### Permissions
+Granular actions that can be performed:
+- Create/delete instances
+- Manage billing
+- View resources
+- Manage team members
+
+### Users
+Team members who are assigned roles.
+
+## Default Roles
+
+<CardGroup cols={2}>
+  <Card title="Owner">
+    - Full account control
+    - Billing management
+    - Delete account
+    - Manage all roles
+  </Card>
+  <Card title="Admin">
+    - Create/manage all resources
+    - Manage team members
+    - View billing
+    - Cannot delete account
+  </Card>
+  <Card title="Developer">
+    - Create/manage instances
+    - Manage networking
+    - Cannot access billing
+    - No team management
+  </Card>
+  <Card title="Viewer">
+    - View all resources
+    - Generate reports
+    - Cannot make changes
+    - No billing access
+  </Card>
+</CardGroup>
+
+## Getting Started
+
+<Steps>
+  <Step title="Invite Team Members">
+    Go to Settings → Team and click "Invite Member"
+  </Step>
+  <Step title="Assign Role">
+    Select a role for the new team member
+  </Step>
+  <Step title="Send Invitation">
+    The member will receive an email invitation
+  </Step>
+</Steps>
+
+## Custom Roles
+
+Create custom roles with specific permissions:
+
+1. Navigate to **Settings** → **Roles**
+2. Click **"Create Role"**
+3. Name your role
+4. Select permissions
+5. Save the role
+
+## Best Practices
+
+<Warning>
+Start with the principle of least privilege. Grant only necessary permissions.
+</Warning>
+
+- Use viewer roles for contractors and auditors
+- Limit billing access to trusted administrators
+- Review team access quarterly
+- Remove access immediately when team members leave
